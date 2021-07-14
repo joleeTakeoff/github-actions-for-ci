@@ -11,9 +11,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         os: [ubuntu-latest, windows-2016]
@@ -33,6 +31,7 @@ jobs:
     - uses: actions/upload-artifact@main
       with:
         name: webpack artifacts
+        path: public/
 
   test:
     needs: build
